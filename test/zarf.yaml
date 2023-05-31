@@ -1,0 +1,21 @@
+kind: ZarfPackageConfig
+metadata:
+  name: minio
+  description: "Minio Deployment"
+  version: "4.5.4-bb.3"
+  architecture: amd64  
+
+components: 
+  - name: values
+    required: true
+    import:
+      path: ../
+      name: values
+  - name: podinfo
+    required: true  
+    description: "Deploy Podinfo"
+    import:
+      path: ../
+      name: app
+    images:
+    - ghcr.io/stefanprodan/podinfo:6.3.6

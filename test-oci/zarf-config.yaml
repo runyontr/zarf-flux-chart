@@ -1,0 +1,9 @@
+package:
+  create:
+    set:
+      repo: "https://github.com/stefanprodan/podinfo"
+      tag: "v1.8.0"
+      name: "podinfo"
+      namespace: "podinfo"
+      values_file: test/values.yaml
+      path: "charts/podinfo"

@@ -1,0 +1,21 @@
+kind: ZarfPackageConfig
+metadata:
+  name: minio
+  description: "Minio Deployment"
+  version: "4.5.4-bb.3"
+  architecture: amd64  
+
+components: 
+  - name: values
+    required: true
+    import:
+      path: oci://ghcr.io/runyontr/zarf-flux-chart:0.0.1
+      name: values
+  - name: podinfo
+    required: true  
+    description: "Deploy Podinfo"
+    import:
+      path: oci://ghcr.io/runyontr/zarf-flux-chart:0.0.1
+      name: app
+    images:
+    - ghcr.io/stefanprodan/podinfo:6.3.6
